@@ -22,6 +22,7 @@ Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
+
 //NProgress.configure({ showSpinner: false });
 
 const router = new VueRouter({
@@ -34,8 +35,8 @@ router.beforeEach((to, from, next) => {
         sessionStorage.removeItem('user');
     }
     let user = JSON.parse(sessionStorage.getItem('user'));
-    //对租户注册进行放行
-    if (!user && to.path != '/login' &&to.path != '/register') {
+    //放行register
+    if (!user && to.path != '/login' && to.path!='/register') {
         next({ path: '/login' })
     } else {
         next()

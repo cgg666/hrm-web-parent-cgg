@@ -12,7 +12,6 @@
       <el-button type="primary" style="width:100%;" @click.native.prevent="handleSubmit2" :loading="logining">登录</el-button>
       <!--<el-button @click.native.prevent="handleReset2">重置</el-button>-->
     </el-form-item>
-
     <el-form-item style="width:100%;">
       <el-button type="default" style="width:100%;" @click.native.prevent="handleRegister" >租户入驻</el-button>
       <!--<el-button @click.native.prevent="handleReset2">重置</el-button>-->
@@ -43,7 +42,6 @@
             };
         },
         methods: {
-
             //跳转到租户注册
             handleRegister(){
                 this.$router.push({ path: '/register' });
@@ -69,7 +67,7 @@
                                     });
                                 } else {
                                     sessionStorage.setItem('user', JSON.stringify(resultObj));
-                                    this.$router.push({ path: '/table' });
+                                    this.$router.push({ path: '/main' });
                                 }
                             })
                         /*requestLogin(loginParams).then(data => {
